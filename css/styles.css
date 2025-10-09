@@ -807,6 +807,15 @@ input[type='checkbox'] {
 	margin-right: 0.125rem;
 }
 
+/* Estiliza o elemento <text> dentro do nosso SVG */
+.logo-svg-text text {
+    font-family: "Open Sans", sans-serif;
+    /* Aumentado de 30px para 36px. Pode ajustar se desejar. */
+    font-size: 35px; 
+    font-weight: 700;
+    transition: fill 0.2s; 
+}
+
 /*********************/
 /*    04. Header     */
 /*********************/
@@ -856,7 +865,7 @@ input[type='checkbox'] {
 
 .header .btn-outline-lg:hover {
 	background-color: #f3f7fd;
-	color: var(--cor-primaria);
+	color: var(--cor-amarelo);
 }
 
 .header-frame {
@@ -872,6 +881,15 @@ input[type='checkbox'] {
 .slider-1 {
 	padding-top: 2.5rem;
 	padding-bottom: 3.25rem;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-1 .swiper-slide img {
+    max-height: 70px; /* Define a altura máxima. Pode ajustar este valor se quiser maior ou menor. */
+    width: auto;      /* Garante que a largura se ajuste para não distorcer a imagem. */
+    max-width: 150px; /* Evita que logos muito largos (horizontais) ocupem todo o espaço. */
 }
 
 .slider-1 .slider-container {
@@ -880,7 +898,7 @@ input[type='checkbox'] {
 
 /* Estilo para o título da seção de Prova Social (Universidades) */
 .social-proof-heading {
-    color: #acb8cc; /* Tom de cinza suave, similar ao da imagem */
+    color: var(--cor-texto-principal); /* Tom de cinza suave, similar ao da imagem */
     font-weight: 600;
     text-align: center;
     text-transform: uppercase; /* Opcional: deixa o texto em maiúsculas */
@@ -1008,7 +1026,7 @@ input[type='checkbox'] {
 .tabs .nav-link:hover,
 .tabs .nav-link.active {
 	background: transparent;
-	color: var(--cor-amarela);
+	color: var(--cor-primaria);
 }
 
 .tabs .nav-link .fas {
@@ -1019,10 +1037,17 @@ input[type='checkbox'] {
 	margin-bottom: 2.75rem;
 }
 
-.tabs .list-unstyled .fas {
-	color: var(--cor-amarela);
-	font-size: 0.5rem;
-	line-height: 1.625rem;
+/* Corrigido para forçar a renderização do ícone em todas as abas */
+.tabs .list-unstyled .media .fas {
+    /* Força a fonte e o peso corretos do Font Awesome para ícones sólidos */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    
+    /* Estilos que já tínhamos */
+    color: var(--cor-primaria);
+    font-size: 0.875rem;
+    line-height: 1.625rem;
+    margin-top: 2px;
 }
 
 .tabs .list-unstyled .media-body {
@@ -1053,6 +1078,19 @@ input[type='checkbox'] {
 	margin-bottom: 1.5rem;
 }
 
+.tabs .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 250px; /* Garante que a área tenha uma altura mínima */
+}
+
+.tabs .image-container .fas {
+    font-size: 7rem; /* Tamanho grande para o ícone */
+    color: var(--cor-primaria);
+    opacity: 0.7;
+}
 
 /***********************************/
 /*     08. Features Lightboxes     */
@@ -1187,7 +1225,7 @@ input[type='checkbox'] {
     font-size: 5rem;
     font-weight: 800;
     line-height: 1;
-    color: var(--cor-amarela);
+    color: var(--cor-primaria);
     opacity: 0.15;
     z-index: 0;
 }
@@ -1201,6 +1239,15 @@ input[type='checkbox'] {
 .step-text p {
     position: relative;
     z-index: 1;
+}
+
+.basic-1 .image-container .fas {
+    display: block;
+    width: 100%;
+    font-size: 8rem; /* Tamanho grande para o ícone */
+    text-align: center;
+    color: var(--cor-primaria);
+    opacity: 0.5; /* Efeito suave */
 }
 
 /* Ajustes para telemóvel */
